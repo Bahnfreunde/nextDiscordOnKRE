@@ -1,11 +1,13 @@
 package space.mrtuxa.bahnfreunde.hafas
 
+import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 
+
 @Serializable
-data class Departure(val line: Line) {
+data class Departure(val line: Line, val `when`: Instant?, val platform: String?) {
     @Serializable
-    data class Line(val fahrtNr: String)
+    data class Line(val fahrtNr: String, val name: String)
 }
 
 @Serializable
